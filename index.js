@@ -2,14 +2,27 @@
 (function () {
     'use strict'
 
-    if (!Typed && !moment) {
+    if (!Typed || !moment) {
         console.error("Error to load");
         return;
     }
 
+    const timeElem = document.getElementById('time');
+    const timeFormats = [
+        "hh:mm:ss a",
+        "hh:mm a",
+        "hh:mm:ss",
+        "HH:mm:ss",
+        "hh:mm a",
+        "HH:mm a",
+        "hh:mm",
+        "HH:mm"
+    ];
+    let timeFormatIndex = 0;
+
     let getGettingMsg = () => {
         let hrs = (new Date()).getHours();
-
+        
         if (hrs < 12)
             return 'Good Morning.';
         else if (hrs >= 12 && hrs <= 17)
@@ -34,8 +47,7 @@
     let typed = new Typed("#welcomeMsg", options);
 
     let updateTimeBySec = () => {
-        let timeElem = document.getElementById('time');
-        timeElem.innerText = moment().format("hh:mm:ss a");;
+        timeElem.innerText = moment().format(timeFormats[timeFormatIndex]);
     };
 
     setInterval(() => {
@@ -43,5 +55,12 @@
     }, 1000);
 
     updateTimeBySec();
+
+    timeElem.setAttribute('title', 'Click to change time format');
+    
+    timeElem.onclick = () => {
+        timeFormatIndex = (timeFormatIndex+1)%timeFormats.length;
+        updateTimeBySec();
+    };
 
 })();
