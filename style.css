@@ -1,7 +1,9 @@
 :root {
     --font-color: #fff;
     --MsgSize: 30px;
+    --clockFontSize: 100px;
 }
+
 
 body {
     padding: 0;
@@ -49,7 +51,7 @@ body {
 #time {
     display: inline;
     position: relative;
-    font-size: 100px;
+    font-size: var(--clockFontSize) ;
     letter-spacing: 2px;
     text-transform: uppercase;
     border: 5px solid var(--font-color);
@@ -57,6 +59,20 @@ body {
     box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.4);
     padding: 25px 40px;
     color: var(--font-color);
+}
+
+@media (max-width: 660px) {
+     :root {
+        --MsgSize: 25px;
+        --clockFontSize : 60px;
+    }
+}
+
+@media (max-width: 460px) {
+     :root {
+        --MsgSize: 20px;
+        --clockFontSize : 30px;
+    }
 }
 
 @keyframes backgroudColorUpdate {
