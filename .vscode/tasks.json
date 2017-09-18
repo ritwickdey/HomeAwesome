@@ -7,7 +7,7 @@
             "taskName": "Build:Chrome",
             "type": "shell",
             "windows": {
-                "command": "cd ${workspaceRoot}\\dist\\chrome && copy ${workspaceRoot}\\manifest.json . && crxmake --pack-extension=${workspaceRoot}"
+                "command": "cd ${workspaceRoot}\\dist\\chrome && crxmake --pack-extension=${workspaceRoot}"
             },
             "problemMatcher": []
         },
