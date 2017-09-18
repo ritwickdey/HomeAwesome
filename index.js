@@ -20,15 +20,14 @@
     }
 
     let options = {
-        strings: ["", "Hi there...", getGettingMsg(), "Fork me on <a href='https://github.com/ritwickdey/HomeAwesome'>GitHub<a> to add features ^200"],
-        typeSpeed: 40,
+        strings: ["", "Hi there...^600", getGettingMsg() + "^600", "Fork me on GitHub to add features.^600"],
+        typeSpeed: 35,
         smartBackspace: true,
 
         backSpeed: 20,
-        shuffle: !true,
         loop: true,
         loopCount: Infinity,
-        showCursor: !false,
+        showCursor: true,
         cursorChar: '|'
     }
 

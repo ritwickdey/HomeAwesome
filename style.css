@@ -1,5 +1,6 @@
 :root {
-    --font-color : #fff;   
+    --font-color: #fff;
+    --MsgSize: 30px;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 }
 
 .typed-cursor {
-    font-size: 50px;
+    font-size: var(--MsgSize);
     opacity: 1;
     font-weight: bold;
     padding-left: 3px;
@@ -26,13 +27,19 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 
 #welcomeMsg {
     display: inline;
-    font-size: 50px;
+    position: relative;
+    font-size: var(--MsgSize);
     color: var(--font-color);
+}
+
+#welcomeMsgContainer {
+    top: -50%;
+    display: inline;
+    position: relative;
 }
 
 #welcomeMsg a {
@@ -42,14 +49,13 @@ body {
 #time {
     display: inline;
     position: relative;
-    top:-20%;
-    font-size: 70px;
+    font-size: 100px;
     letter-spacing: 2px;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     border: 5px solid var(--font-color);
     border-radius: 0px 10px;
     box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.4);
-    padding: 25px;
+    padding: 25px 40px;
     color: var(--font-color);
 }
 
@@ -70,6 +76,6 @@ body {
         background-color: #2c3e50;
     }
     100% {
-        background-color: #f1c40f;
+        background-color: #c0392b;
     }
 }
