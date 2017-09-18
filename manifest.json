@@ -1,0 +1,13 @@
+{
+
+    "manifest_version": 2,
+    "name": "CustomHome",
+    "version": "0.0.0",
+
+    "description": "Customize Your Home Page",
+
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    }
+
+}
