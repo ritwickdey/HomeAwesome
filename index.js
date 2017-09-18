@@ -20,7 +20,7 @@
     }
 
     let options = {
-        strings: ["","Hi there...", getGettingMsg(), "It's really awesome. ^200 Isn't it? ", "Fork me on GitHub to add features"],
+        strings: ["","Hi there...", getGettingMsg(), "It's really awesome. ^200 Isn't it? ", "Fork me on <a href='https://github.com/ritwickdey/HomeAwesome'>GitHub<a> to add features ^200"],
         typeSpeed: 40,
         smartBackspace: true,
 

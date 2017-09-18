@@ -33,6 +33,10 @@ body {
     color: var(--font-color);
 }
 
+#welcomeMsg a {
+    color: var(--font-color);
+}
+
 @keyframes backgroudColorUpdate {
     0% {
         background-color: #8e44ad;
