@@ -1,0 +1,55 @@
+:root {
+    --font-color : #fff;   
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    animation: backgroudColorUpdate 10s linear 0.5s infinite alternate-reverse both;
+}
+
+.typed-cursor {
+    font-size: 50px;
+    opacity: 1;
+    font-weight: bold;
+    padding-left: 3px;
+    color: var(--font-color);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcomeMsg {
+    display: inline;
+    font-size: 50px;
+    color: var(--font-color);
+}
+
+@keyframes backgroudColorUpdate {
+    0% {
+        background-color: #8e44ad;
+    }
+    20% {
+        background-color: #3498db;
+    }
+    40% {
+        background-color: #e67e22;
+    }
+    60% {
+        background-color: #1abc9c;
+    }
+    80% {
+        background-color: #2c3e50;
+    }
+    100% {
+        background-color: #f1c40f;
+    }
+}
