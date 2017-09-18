@@ -10,3 +10,7 @@ A FireFox & Chrome extension
 4. Make sure the `Developer Mode` is checked.
 5. Click to `Load Unpacked Extension` and select the unzip folder. 
 
+## How to install to Mozilla Firefox?
+ > Coming to Mozilla Add On Store....
+
+
