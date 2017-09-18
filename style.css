@@ -8,7 +8,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    animation: backgroudColorUpdate 10s linear 0.5s infinite alternate-reverse both;
+    animation: backgroudColorUpdate 25s linear 0.5s infinite alternate-reverse both;
 }
 
 .typed-cursor {
@@ -25,6 +25,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    
 }
 
 #welcomeMsg {
@@ -34,6 +36,20 @@ body {
 }
 
 #welcomeMsg a {
+    color: var(--font-color);
+}
+
+#time {
+    display: inline;
+    position: relative;
+    top:-20%;
+    font-size: 70px;
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    border: 5px solid var(--font-color);
+    border-radius: 0px 10px;
+    box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.4);
+    padding: 25px;
     color: var(--font-color);
 }
 
