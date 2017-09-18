@@ -6,6 +6,7 @@
 
 
 body {
+    user-select: none;
     padding: 0;
     margin: 0;
     height: 100vh;
@@ -58,7 +59,12 @@ body {
     border-radius: 0px 10px;
     box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.4);
     padding: 25px 40px;
+    text-align: center;
+    min-width: 40vw;
+    cursor: pointer;
     color: var(--font-color);
+    transform: rotate(7deg);
+    transition: 0.5s;
 }
 
 @media (max-width: 660px) {
