@@ -65,6 +65,7 @@ body {
     color: var(--font-color);
     transform: rotate(7deg);
     transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.19);
 }
 
 @media (max-width: 660px) {
