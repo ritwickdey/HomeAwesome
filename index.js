@@ -2,8 +2,8 @@
 (function () {
     'use strict'
 
-    if (!Typed) {
-        console.error("Typed.Js is not found.");
+    if (!Typed && !moment) {
+        console.error("Error to load");
         return;
     }
 
@@ -20,7 +20,7 @@
     }
 
     let options = {
-        strings: ["", "Hi there...", getGettingMsg(), "It's really awesome. ^200 Isn't it? ", "Fork me on <a href='https://github.com/ritwickdey/HomeAwesome'>GitHub<a> to add features ^200"],
+        strings: ["", "Hi there...", getGettingMsg(), "Fork me on <a href='https://github.com/ritwickdey/HomeAwesome'>GitHub<a> to add features ^200"],
         typeSpeed: 40,
         smartBackspace: true,
 
@@ -34,11 +34,14 @@
 
     let typed = new Typed("#welcomeMsg", options);
 
-    let updateTimeBySec = setInterval(() => {
-            let timeElem = document.getElementById('time');
-            timeElem.innerText = moment().format("hh:mm:ss a");;
-    }, 1000);
+    let updateTimeBySec = () => {
+        let timeElem = document.getElementById('time');
+        timeElem.innerText = moment().format("hh:mm:ss a");;
+    };
 
+    setInterval(() => {
+        updateTimeBySec();
+    }, 1000);
 
     updateTimeBySec();
 
