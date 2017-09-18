@@ -1,12 +1,13 @@
 ;
 (function () {
+    'use strict'
 
     if (!Typed) {
         console.error("Typed.Js is not found.");
         return;
     }
 
-    getGettingMsg = () => {
+    let getGettingMsg = () => {
         let hrs = (new Date()).getHours();
 
         if (hrs < 12)
@@ -19,7 +20,7 @@
     }
 
     let options = {
-        strings: ["Hi there...", getGettingMsg(), "It's really awesome. ^200 Isn't it? ", "Fork me on GitHub to add features"],
+        strings: ["","Hi there...", getGettingMsg(), "It's really awesome. ^200 Isn't it? ", "Fork me on GitHub to add features"],
         typeSpeed: 40,
         smartBackspace: true,
 
