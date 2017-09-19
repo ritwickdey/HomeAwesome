@@ -61,8 +61,6 @@ body {
 }
 
 #timeDigital {
-    display: flex;
-    align-items: center;
     font-size: var(--clockFontSize);
     letter-spacing: 2px;
     text-transform: uppercase;
