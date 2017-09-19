@@ -86,6 +86,8 @@ body {
     width: 250px;
     border-radius: 50%;
     position: relative;
+    background-color: rgba(0, 0, 0, 0.19);
+    box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.4);
 }
 #timeAnalog {
     transform: rotate(-90deg)
@@ -108,7 +110,7 @@ body {
 }
 
 #timeAnalog #hrs {
-    width: 70px;
+    width: 65px;
     height: 7px;
     margin: 0px 0 0 40px;
 }
