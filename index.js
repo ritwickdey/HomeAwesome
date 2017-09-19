@@ -61,6 +61,7 @@
     timeDigitalElem.setAttribute('title', 'Click to change time format');
 
     timeDigitalElem.onclick = () => {
+        event.stopPropagation();
         timeFormatIndex = (timeFormatIndex + 1) % timeFormats.length;
         updateTimeBySec();
     };
