@@ -7,7 +7,7 @@
         return;
     }
 
-    const timeElem = document.getElementById('time');
+    const timeDigitalElem = document.getElementById('timeDigital');
     const timeFormats = [
         "hh:mm:ss a",
         "hh:mm a",
@@ -47,7 +47,7 @@
     let typed = new Typed("#welcomeMsg", options);
 
     let updateTimeBySec = () => {
-        timeElem.innerText = moment().format(timeFormats[timeFormatIndex]);
+        timeDigitalElem.innerText = moment().format(timeFormats[timeFormatIndex]);
     };
 
     setInterval(() => {
@@ -56,11 +56,14 @@
 
     updateTimeBySec();
 
-    timeElem.setAttribute('title', 'Click to change time format');
+    timeDigitalElem.setAttribute('title', 'Click to change time format');
     
-    timeElem.onclick = () => {
+    timeDigitalElem.onclick = () => {
         timeFormatIndex = (timeFormatIndex+1)%timeFormats.length;
         updateTimeBySec();
     };
+
+    
+
 
 })();

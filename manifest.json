@@ -6,8 +6,8 @@
 
     "description": "Customize New Tabs",
     "short_name": "Home Awesome",
-    
-    
+
+
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
@@ -16,6 +16,12 @@
         "16": "icons/icon16.png",
         "64": "icons/icon64.png",
         "128": "icons/icon128.png"
+    },
+
+    "applications": {
+        "gecko": {
+            "strict_min_version": "54.0"
+        }
     }
 
 }

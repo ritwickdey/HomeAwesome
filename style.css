@@ -15,6 +15,10 @@ body {
     animation: backgroudColorUpdate 25s linear 0.5s infinite alternate-reverse both;
 }
 
+.hide {
+    display: none !important;
+}
+
 .typed-cursor {
     font-size: var(--MsgSize);
     opacity: 1;
@@ -40,9 +44,9 @@ body {
 }
 
 #welcomeMsgContainer {
-    top: -50%;
-    display: inline;
-    position: relative;
+    top: 10%;
+    display: block;
+    position: fixed;
 }
 
 #welcomeMsg a {
@@ -50,22 +54,25 @@ body {
 }
 
 #time {
-    display: inline;
     position: relative;
+    display: block;
+    cursor: pointer;
+    color: var(--font-color);
+    transition: 0.5s;   
+}
+
+#timeDigital {
     font-size: var(--clockFontSize) ;
     letter-spacing: 2px;
     text-transform: uppercase;
     border: 5px solid var(--font-color);
     border-radius: 0px 10px;
+    background-color: rgba(0, 0, 0, 0.19);
     box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.4);
     padding: 25px 40px;
     text-align: center;
     min-width: 40vw;
-    cursor: pointer;
-    color: var(--font-color);
     transform: rotate(7deg);
-    transition: 0.5s;
-    background-color: rgba(0, 0, 0, 0.19);
 }
 
 @media (max-width: 660px) {
