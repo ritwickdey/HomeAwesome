@@ -75,9 +75,13 @@ body {
 }
 
 #timeAnalog {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transform: rotate(-90deg);
 }
 
 #analogClockRound {
@@ -89,9 +93,7 @@ body {
     background-color: rgba(0, 0, 0, 0.19);
     box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.4);
 }
-#timeAnalog {
-    transform: rotate(-90deg)
-}
+
 #timeAnalog .hand {
     position: absolute;
     width: 100px;
@@ -101,33 +103,37 @@ body {
     border-radius: 50px;
     padding: 0;
     margin: 0;
+    left: 50%;
+    top: 50%;
 }
 
 #timeAnalog #min {
     width: 85px;
     height: 7px;
-    margin: 0px 0 0 47px;
+    margin: 0px 0 0 4px;
 }
 
 #timeAnalog #hrs {
     width: 65px;
     height: 7px;
-    margin: 0px 0 0 40px;
+    margin: -4px 0 0 5px;;
 }
 
 #timeAnalog #sec {
     height: 1.5px;
-    margin: 0px 0 0 55px;
+    margin: 0px 0 0 5px;
 }
 
 #timeAnalog::after {
-    position: fixed;
+    position: absolute;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    margin: 0px 0 0 5px;
+    margin: -5px -14px 0px 0px;
     background: #fff;
     content: "";
+    top: 50%;
+    right: 50%;
 }
 
 @media (max-width: 660px) {
