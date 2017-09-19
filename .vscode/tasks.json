@@ -15,7 +15,7 @@
             "taskName": "Build:FireFox",
             "type": "shell",
             "windows": {
-                "command": "cd ${workspaceRoot}\\dist\\firefox && web-ext build --source-dir=${workspaceRoot} --overwrite-dest -i=${workspaceRoot}\\img\\**"
+                "command": "cd ${workspaceRoot}\\dist\\firefox && web-ext build --source-dir=${workspaceRoot} --overwrite-dest -i=${workspaceRoot}\\img\\** ${workspaceRoot}\\dist\\**"
             },
             "problemMatcher": []
         }

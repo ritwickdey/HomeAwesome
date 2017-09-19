@@ -1,8 +1,8 @@
 {
 
     "manifest_version": 2,
-    "name": "Home Awesome",
-    "version": "0.0.3",
+    "name": "Home Awesome BETA",
+    "version": "0.0.4",
 
     "description": "Customize New Tabs",
     "short_name": "Home Awesome",
@@ -17,6 +17,7 @@
         "64": "icons/icon64.png",
         "128": "icons/icon128.png"
     },
+
 
     "applications": {
         "gecko": {
