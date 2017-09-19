@@ -4,7 +4,6 @@
     --clockFontSize: 100px;
 }
 
-
 body {
     user-select: none;
     padding: 0;
@@ -58,11 +57,13 @@ body {
     display: block;
     cursor: pointer;
     color: var(--font-color);
-    transition: 0.5s;   
+    transition: 0.5s;
 }
 
 #timeDigital {
-    font-size: var(--clockFontSize) ;
+    display: flex;
+    align-items: center;
+    font-size: var(--clockFontSize);
     letter-spacing: 2px;
     text-transform: uppercase;
     border: 5px solid var(--font-color);
@@ -75,17 +76,71 @@ body {
     transform: rotate(7deg);
 }
 
+#timeAnalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#analogClockRound {
+    border: 10px solid #fff;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    position: relative;
+}
+#timeAnalog {
+    transform: rotate(-90deg)
+}
+#timeAnalog .hand {
+    position: absolute;
+    width: 100px;
+    height: 7px;
+    background-color: #fff;
+    transform-origin:  0% 50%;
+    border-radius: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+#timeAnalog #min {
+    width: 85px;
+    height: 7px;
+    margin: 0px 0 0 47px;
+}
+
+#timeAnalog #hrs {
+    width: 70px;
+    height: 7px;
+    margin: 0px 0 0 40px;
+}
+
+#timeAnalog #sec {
+    height: 1.5px;
+    margin: 0px 0 0 55px;
+}
+
+#timeAnalog::after {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0px 0 0 5px;
+    background: #fff;
+    content: "";
+}
+
 @media (max-width: 660px) {
      :root {
         --MsgSize: 25px;
-        --clockFontSize : 60px;
+        --clockFontSize: 60px;
     }
 }
 
 @media (max-width: 460px) {
      :root {
         --MsgSize: 20px;
-        --clockFontSize : 30px;
+        --clockFontSize: 30px;
     }
 }
 

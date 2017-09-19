@@ -8,6 +8,7 @@
     }
 
     const timeDigitalElem = document.getElementById('timeDigital');
+    const timeAnalogElem = document.getElementById('timeAnalog');
     const timeFormats = [
         "hh:mm:ss a",
         "hh:mm a",
@@ -22,7 +23,7 @@
 
     let getGettingMsg = () => {
         let hrs = (new Date()).getHours();
-        
+
         if (hrs < 12)
             return 'Good Morning.';
         else if (hrs >= 12 && hrs <= 17)
@@ -57,13 +58,31 @@
     updateTimeBySec();
 
     timeDigitalElem.setAttribute('title', 'Click to change time format');
-    
+
     timeDigitalElem.onclick = () => {
-        timeFormatIndex = (timeFormatIndex+1)%timeFormats.length;
+        timeFormatIndex = (timeFormatIndex + 1) % timeFormats.length;
         updateTimeBySec();
     };
 
-    
+    let updateAnalogClock = () => {
+        let time = moment();
+        
+        let secs = time.seconds() * 360 / 60;
+        let mins = time.minutes() * 360 / 60 + secs / 60;
+        let hrs = (time.hours() % 12) * 360 / 12 + mins / 12;
+
+        timeAnalogElem.querySelector('#sec').style.transform = `rotate(${secs}deg)`;
+        timeAnalogElem.querySelector('#min').style.transform = `rotate(${mins}deg)`;
+        timeAnalogElem.querySelector('#hrs').style.transform = `rotate(${hrs}deg)`;
+    }
+
+    setInterval(() => {
+        updateAnalogClock();
+    }, 1000);
+
+    updateAnalogClock();
+
+
 
 
 })();
