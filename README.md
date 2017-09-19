@@ -1,5 +1,5 @@
 # Home Awesome
-A FireFox & Chrome extension that will replace you home screen of you browser with beautiful clocks.
+A FireFox & Chrome extension that will replace your home screen (New Tab) of your browser with beautiful clocks & design.
 
 ## How to install to Google Chrome?
 1. Download the the GitHub repository as zip. 
@@ -10,6 +10,10 @@ A FireFox & Chrome extension that will replace you home screen of you browser wi
 
 ## How to install to Mozilla Firefox?
  > Coming to Mozilla Add On Store....
+
+## Usages 
+- Click to outside of the clock to toggle clock type in between Digital & Analog.
+- Click inside of the Digital Clock to change time format.
 
 ## Screenshots
 
