@@ -4,8 +4,10 @@
     "name": "Home Awesome",
     "version": "0.0.3",
 
-    "description": "Customize Your Home Page",
-
+    "description": "Customize New Tabs",
+    "short_name": "Home Awesome",
+    
+    
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
