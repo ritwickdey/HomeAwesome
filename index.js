@@ -7,6 +7,7 @@
         return;
     }
 
+    let toggleClock = true;
     const timeDigitalElem = document.getElementById('timeDigital');
     const timeAnalogElem = document.getElementById('timeAnalog');
     const timeFormats = [
@@ -66,7 +67,7 @@
 
     let updateAnalogClock = () => {
         let time = moment();
-        
+
         let secs = time.seconds() * 360 / 60;
         let mins = time.minutes() * 360 / 60 + secs / 60;
         let hrs = (time.hours() % 12) * 360 / 12 + mins / 12;
@@ -82,6 +83,22 @@
 
     updateAnalogClock();
 
+    let toggleClockType = () => {
+        if (toggleClock) {
+            timeDigitalElem.classList.add('hide');
+            timeAnalogElem.classList.remove('hide');
+        } else {
+            timeDigitalElem.classList.remove('hide');
+            timeAnalogElem.classList.add('hide');
+        }
+        toggleClock = !toggleClock;
+    }
+
+    toggleClockType();
+
+    document.body.onclick = () => {
+        toggleClockType();
+    }
 
 
 
