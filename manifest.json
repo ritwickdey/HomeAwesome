@@ -1,13 +1,9 @@
 {
-
     "manifest_version": 2,
     "name": "Home Awesome BETA",
     "version": "0.0.4",
-
     "description": "Customize New Tabs",
     "short_name": "Home Awesome",
-
-
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
@@ -17,12 +13,21 @@
         "64": "icons/icon64.png",
         "128": "icons/icon128.png"
     },
-
-
+    "permissions": [
+        "storage"
+    ],
+    "options_ui": {
+        "page": "html/options.html",
+        "open_in_tab": true
+    },
+    "browser_action": {
+        "default_icon": "icons/icon64.png",
+        "default_title": "Home Awesome",
+        "default_popup": "html/options.html"
+    },
     "applications": {
         "gecko": {
-            "strict_min_version": "54.0"
+            "strict_min_version": "57.0"
         }
     }
-
 }
