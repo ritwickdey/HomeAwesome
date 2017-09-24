@@ -2,7 +2,7 @@
 (function () {
     'use strict'
 
-    if (!Typed || !moment) {
+    if (!Typed || !moment || !jQuery) {
         console.error("Error to load");
         return;
     }
@@ -29,7 +29,7 @@
             return 'Good Morning.';
         else if (hrs >= 12 && hrs <= 17)
             return 'Good Afternoon.';
-        else(hrs >= 17 && hrs <= 24)
+        else (hrs >= 17 && hrs <= 24)
         return 'Good Evening.';
 
     }
@@ -101,6 +101,23 @@
         toggleClockType();
     }
 
+    // var bingImagesUrl = "http://bing.com/HPImageArchive.aspx";
+    // $.getJSON( bingImagesUrl, {
+    //   idx:0,
+    //   n:1,
+    //   format: "js"
+    // }).done(function( data ) {
+    //       $('#output').html(data.images[0].url);
+    // });
+    
 
+
+
+    
+
+   
+    {
+        // document.body.style.backgroundImage = "url(./img/homeAwesome3.png)"
+    }
 
 })();
