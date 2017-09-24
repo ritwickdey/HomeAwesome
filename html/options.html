@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Options | Home Awesome</title>
+    <link rel="stylesheet" href="/lib/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/options.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <div class="col">
+                    <label for="name">Your Name</label>
+                    <input id="name" type="text" class="form-control" placeholder="Eg. Akash">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col">
+                    <label for="msg">Greeting Messages</label>
+                    <input id="msg" type="text" class="form-control" placeholder="Eg. Happy Birth Day, Have a nice day...">
+                </div>
+            </div>
+            <div class="form-group col">
+                <label for="clock">Clock Mode</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="clock" id="digitalClock" value="digitalClock"> Digital Clock
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="clock" id="analogClock" value="analogClock"> Analog Clock
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col">
+                <button type="submit" class="btn btn-primary btn-block">Done</button>
+            </div>
+            <hr>
+        </form>
+    </div>
+
+    <script src="/js/options.js"></script>
 </body>
+
 </html>
