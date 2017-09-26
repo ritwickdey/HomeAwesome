@@ -101,19 +101,36 @@
         toggleClockType();
     }
 
-    $.ajax({
-        url: "https://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=d1d1d944fa904d542998ba2d930ee84d&extras=original_format%2C+url_k%2C+url_h%2C+url_b&per_page=10&format=json&nojsoncallback=1&auth_token=72157688828719026-60f0822e8c0cf235&api_sig=a0484e62b90a9e00064a511a91eea331",
-        method: "GET",
-        success: (result) => {
-            let photoList = result.photos.photo.map(e => {
-                let urlsetup = `https://farm${e.farm}.staticflickr.com/${e.server}/${e.id}_${e.secret}.${e.originalformat || 'jpg'}`;
-                return {
-                    title : e.time,
-                    url: e.url_k || e.url_h || e.url_b || urlsetup
-                }
-            });
+    chrome.storage.local.get('cacheImgUrls', (result) => {
+        if (result.cacheImgUrls && result.cacheImgUrls.cachedate && (Date.now() - result.cacheImgUrls.cachedate) < 86400000) {
+            setBackgroudImage(result.cacheImgUrls.links)
+            return;
+        }
 
-            let index = ((new Date()).getUTCDate()%photoList.length);
+        $.ajax({
+            url: "https://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=d1d1d944fa904d542998ba2d930ee84d&extras=original_format%2C+url_k%2C+url_h%2C+url_b&per_page=10&format=json&nojsoncallback=1&auth_token=72157688828719026-60f0822e8c0cf235&api_sig=a0484e62b90a9e00064a511a91eea331",
+            method: "GET",
+            cache: true,
+            success: (result) => {
+                let photoList = result.photos.photo.map(e => {
+                    let urlsetup = `https://farm${e.farm}.staticflickr.com/${e.server}/${e.id}_${e.secret}.${e.originalformat || 'jpg'}`;
+                    return {
+                        title: e.time,
+                        url: e.url_k || e.url_h || e.url_b || urlsetup
+                    }
+                });
+                chrome.storage.local.set({
+                    cacheImgUrls: {
+                        links: photoList,
+                        cachedate: Date.now()
+                    }
+                });
+                setBackgroudImage(photoList);
+            }
+        });
+
+        function setBackgroudImage(photoList) {
+            let index = ((new Date()).getUTCDate() % photoList.length);
             document.body.style.backgroundImage = `url('${photoList[index].url}')`
         }
     });
