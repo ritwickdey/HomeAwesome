@@ -5,7 +5,7 @@
 	});
 
 	chrome.browserAction.onClicked.addListener(function (tab) {
-		chrome.tabs.create({url: "install.html"});
+		chrome.tabs.create({url: "index.html"});
 	});
 
 })();
