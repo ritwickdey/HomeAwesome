@@ -17,11 +17,13 @@ This Extension is compatible with Firefox 57+. [Download it from here](https://a
 
 ## Screenshots
 
-* Screenshot 1  ![Screenshot 1](./img/homeAwesome1.png)
+* Screenshot 1  ![Screenshot 1](./img/homeAwesome4.png)
     <hr>
-* Screenshot 2  ![Screenshot 2](./img/homeAwesome2.png)
+* Screenshot 2  ![Screenshot 1](./img/homeAwesome1.png)
     <hr>
-* Screenshot 3  ![Screenshot 3](./img/homeAwesome3.png)
+* Screenshot 3  ![Screenshot 2](./img/homeAwesome2.png)
+    <hr>
+* Screenshot 4  ![Screenshot 3](./img/homeAwesome3.png)
 
 <hr>
 
