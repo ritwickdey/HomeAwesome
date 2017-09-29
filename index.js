@@ -108,7 +108,7 @@
         }
 
         $.ajax({
-            url: "https://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=d1d1d944fa904d542998ba2d930ee84d&extras=original_format%2C+url_k%2C+url_h%2C+url_b&per_page=10&format=json&nojsoncallback=1&auth_token=72157688828719026-60f0822e8c0cf235&api_sig=a0484e62b90a9e00064a511a91eea331",
+            url: "https://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=0caa69f8005326b54a21b8baa2181395&user_id=152281330%40N02&extras=original_format%2C+url_k%2C+url_h%2C+url_b&per_page=10&format=json&nojsoncallback=1",
             method: "GET",
             cache: true,
             success: (result) => {
@@ -130,7 +130,7 @@
         });
 
         function setBackgroudImage(photoList) {
-            let index = ((new Date()).getUTCDate() % photoList.length);
+            let index = (((new Date()).getUTCDate()) % photoList.length);
             document.body.style.backgroundImage = `url('${photoList[index].url}')`
         }
     });
