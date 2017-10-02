@@ -20,24 +20,31 @@
         "hh:mm",
         "HH:mm"
     ];
+    const wishes = [
+        [0, 4, "Good night"], 
+        [5, 11, "Good morning"],   
+        [12, 17, "Good afternoon"],
+        [18, 24, "Good evening"]
+    ];
+      
+    
     let timeFormatIndex = 0;
 
-    let getWelcomeMsg = () => {
+    let getWishMsg = () => {
         let hrs = (new Date()).getHours();
 
-        if (hrs < 12)
-            return 'Good Morning.';
-        else if (hrs >= 12 && hrs <= 17)
-            return 'Good Afternoon.';
-        else (hrs >= 17 && hrs <= 24)
-        return 'Good Evening.';
+        for(let i = 0; i < wishes.length; i++){
+            if(hrs >= wishes[i][0] && hrs <= wishes[i][1]){
+                return wishes[i][2] ;
+            }
+        }
 
     }
 
     let getGettingMsg = () => {
         let msg = [""];
         const defaultGetting = [
-            getWelcomeMsg(),
+            getWishMsg(),
             "Have A Great day."
         ];
 
@@ -49,7 +56,7 @@
             else
                 greetingMsgs = defaultGetting;
             let name = options.username || 'there';
-            msg.push(`Hi, ${name}`, getWelcomeMsg(), ...greetingMsgs);
+            msg.push(`Hi, ${name}`, getWishMsg(), ...greetingMsgs);
         } catch (error) {
             msg.push(...defaultGetting);
         }
