@@ -22,7 +22,7 @@
     ];
     let timeFormatIndex = 0;
 
-    let getGettingMsg = () => {
+    let getWelcomeMsg = () => {
         let hrs = (new Date()).getHours();
 
         if (hrs < 12)
@@ -34,8 +34,34 @@
 
     }
 
+    let getGettingMsg = () => {
+        let msg = [""];
+        const defaultGetting = [
+            getWelcomeMsg(),
+            "Have A Great day."
+        ];
+
+        try {
+            let options = JSON.parse(localStorage.getItem('options'));
+            let greetingMsgs = options.greetingMsgs;
+            if (greetingMsgs)
+                greetingMsgs = greetingMsgs.split(',');
+            else
+                greetingMsgs = defaultGetting;
+            let name = options.username || 'there';
+            msg.push(`Hi, ${name}`, getWelcomeMsg(), ...greetingMsgs);
+        } catch (error) {
+            msg.push(...defaultGetting);
+        }
+        finally {
+            msg = msg.map(e => e + '^600');
+        }
+
+        return msg;
+    };
+
     let options = {
-        strings: ["", "Hi there...^600", getGettingMsg() + "^600", "Fork me on GitHub to add features.^600"],
+        strings: getGettingMsg(),
         typeSpeed: 35,
         smartBackspace: true,
 
@@ -46,9 +72,17 @@
         cursorChar: '|'
     }
 
+
+
     let typed = new Typed("#welcomeMsg", options);
 
+    typed.complete = () => {
+        typed.strings = getGettingMsg();
+    }
+
+
     let updateTimeBySec = () => {
+
         timeDigitalElem.innerText = moment().format(timeFormats[timeFormatIndex]);
     };
 
