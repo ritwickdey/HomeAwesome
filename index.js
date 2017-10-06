@@ -21,21 +21,21 @@
         "HH:mm"
     ];
     const wishes = [
-        [0, 4, "Good night"], 
-        [5, 11, "Good morning"],   
+        [0, 4, "Good night"],
+        [5, 11, "Good morning"],
         [12, 17, "Good afternoon"],
         [18, 24, "Good evening"]
     ];
-      
-    
+
+
     let timeFormatIndex = 0;
 
     let getWishMsg = () => {
         let hrs = (new Date()).getHours();
 
-        for(let i = 0; i < wishes.length; i++){
-            if(hrs >= wishes[i][0] && hrs <= wishes[i][1]){
-                return wishes[i][2] ;
+        for (let i = 0; i < wishes.length; i++) {
+            if (hrs >= wishes[i][0] && hrs <= wishes[i][1]) {
+                return wishes[i][2];
             }
         }
 
@@ -51,9 +51,7 @@
         try {
             let options = JSON.parse(localStorage.getItem('options'));
             let greetingMsgs = options.greetingMsgs;
-            if (greetingMsgs)
-                greetingMsgs = greetingMsgs.split(',');
-            else
+            if (!greetingMsgs)
                 greetingMsgs = defaultGetting;
             let name = options.username || 'there';
             msg.push(`Hi, ${name}`, getWishMsg(), ...greetingMsgs);
@@ -79,13 +77,7 @@
         cursorChar: '|'
     }
 
-
-
     let typed = new Typed("#welcomeMsg", options);
-
-    typed.complete = () => {
-        typed.strings = getGettingMsg();
-    }
 
 
     let updateTimeBySec = () => {
@@ -175,5 +167,12 @@
             document.body.style.backgroundImage = `url('${photoList[index].url}')`
         }
     });
+
+    chrome.runtime.onMessage.addListener((msg) => { 
+        if(msg && msg.status && msg.status === 'options-modified') {
+            typed.strings = getGettingMsg();
+            typed.reset();
+        }
+    })
 
 })();

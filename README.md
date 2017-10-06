@@ -9,7 +9,7 @@ A FireFox & Chrome extension that will replace your home screen (New Tab) of you
 5. Click to `Load Unpacked Extension` and select the unzip folder. 
 
 ## How to install to Mozilla Firefox?
-~This Extension is compatible with Firefox 57+. [Download it from here](https://addons.mozilla.org/en-US/firefox/addon/home-awesome/)~
+~~This Extension is compatible with Firefox 57+. [Download it from here](https://addons.mozilla.org/en-US/firefox/addon/home-awesome/)~~
 
 ***I removed from mozila store since the project is incomplete. You can install in debugging mode `about:debugging`.***
 

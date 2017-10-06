@@ -7,11 +7,12 @@ function saveOptions(e) {
     let checkedClock = [...clocksBtns].find(e => e.checked);
     let options = {
         username: username.value.trim(),
-        greetingMsgs: greetingMsgs.value.trim(),
+        greetingMsgs: greetingMsgs.value.trim().split(','),
         clock: checkedClock ? checkedClock.value : 'analogClock'
     }
     localStorage.setItem('options', JSON.stringify(options));
     e.preventDefault();
+    chrome.runtime.sendMessage({ status: 'options-modified', options: options });
     window.close();
 }
 
